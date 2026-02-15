@@ -14,3 +14,27 @@ The objective is to:
 - Implement logging and incremental load logic
 
 This project simulates a production-grade ETL pipeline.
+
+## Data Modeling Approach
+
+The grain of the fact table is one row per order line item.
+
+Fact Table:
+- fact_sales
+    - order_id
+    - product_id
+    - customer_id
+    - order_date_key
+    - sales
+    - quantity
+    - discount
+    - profit
+
+Dimension Tables:
+- dim_customer
+- dim_product
+- dim_region
+- dim_date
+
+A star schema design was chosen to optimize analytical query performance.
+
